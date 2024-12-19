@@ -16,5 +16,14 @@ export default defineConfig({
         ],
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          logger: {
+            warn: () => {},
+          },
+        },
+      },
+    }
   },
 });

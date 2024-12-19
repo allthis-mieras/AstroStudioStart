@@ -1,11 +1,91 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Layout from "../layouts/Layout.astro";
+import TextBlock from "../components/content/TextBlock.astro";
+import RationaleBlock from "../components/content/RationaleBlock.astro";
+import ImageBlock from "../components/content/ImageBlock.astro";
+import VideoBlock from "../components/content/VideoBlock.astro";
+import MultiColBlock from "../components/content/MultiColBlock.astro";
+import TestimonialBlock from "../components/content/TestimonialBlock.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="page-layout">
+    <pre>RationaleBlock.astro</pre>
+    <RationaleBlock
+      title="The question"
+      content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel id cumque ratione, quisquam unde commodi error. Perferendis impedit, fugit quas facere culpa incidunt odit, ex natus dolorum harum et quisquam!"
+    />
+    <pre>TextBlock.astro</pre>
+    <TextBlock>
+      <h3>Heading</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+      <h4>Subheading</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+    </TextBlock>
+    <pre>ImageBlock.astro</pre>
+    <ImageBlock
+      image="https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg"
+      caption="A nice bird"
+      alt="A picture of a bird"
+      size="popout"
+    />
+    <pre>VideoBlock.astro</pre>
+    <VideoBlock
+      title="For Bigger Joyrides"
+      description="Introducing Chromecast. The easiest way to enjoy online video and music on your TV—for the times that call for bigger joyrides. For $35. Learn how to use Chromecast with YouTube and more at google.com/chromecast."
+      sources={[
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      ]}
+      subtitle="By Google"
+      thumb="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+      size="full"
+    />
+
+    <MultiColBlock
+      columns={[
+        {
+          _type: "textBlock",
+          content:
+            "<h3>Heading</h3><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde, consequatur corrupti in quod nesciunt inventore harum quo minus repellat illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!</p>",
+        },
+
+        {
+          _type: "imageBlock",
+          image:
+            "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
+          alt: "Een voorbeeldafbeelding",
+          size: "large",
+          caption: "Een mooie afbeelding",
+        },
+        {
+          _type: "videoBlock",
+          title: "Voorbeeldvideo",
+          description: "Dit is een voorbeeld van een video.",
+          sources: [
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+          ],
+          size: "inline",
+          thumb:
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+        },
+      ]}
+    />
+
+    <TestimonialBlock
+      quote="This product completely changed the way we work. The results are outstanding!"
+      name="Jane Doe"
+      role="CEO"
+      company="Example Corp"
+    />
+  </div>
 </Layout>

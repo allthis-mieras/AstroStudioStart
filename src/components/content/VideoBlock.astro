@@ -1,0 +1,71 @@
+---
+export interface Props {
+  title: string; // Titel van de video
+  description: string; // Beschrijving van de video
+  sources: string[]; // Lijst met video-URL's (meerdere formaten mogelijk)
+  subtitle?: string; // Ondertitel van de video
+  thumb?: string; // Thumbnail (optioneel)
+  size: "full" | "large" | "inline"; // Grootte opties
+}
+
+const { title, description, sources, subtitle, thumb, size } = Astro.props;
+---
+
+<figure class={`video-block ${size}`}>
+  <div class="video-container">
+    <video
+      controls
+      poster={thumb}
+      aria-label={title}
+      preload="metadata"
+      autoplay
+      muted
+      playsinline
+    >
+      {sources.map((source) => <source src={source} type="video/mp4" />)}
+       Your browser does not support the video tag.
+    </video>
+  </div>
+  <figcaption>
+    <strong>{title}</strong>
+    {subtitle && <div class="subtitle">{subtitle}</div>}
+    <p>{description}</p>
+  </figcaption>
+</figure>
+
+<style>
+  .video-block {
+    display: block;
+
+    width: 100%;
+    text-align: center;
+  }
+
+  .video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Moderne en schone manier om aspect ratio te beheren */
+    overflow: hidden;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  figcaption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: left;
+  }
+
+  figcaption .subtitle {
+    font-style: italic;
+    color: #777;
+  }
+
+  figcaption p {
+    margin-top: 0.5rem;
+  }
+</style>

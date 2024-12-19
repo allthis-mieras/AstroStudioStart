@@ -1,0 +1,255 @@
+
+:root {
+--radius-small: 3px;
+--radius-large: 6px;
+--gap-default: 2rem;
+--font-measure: 70ch;
+--font-family-default: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+--font-family-special: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif
+--font-color: var(--neutral-900);
+--action-color: var(--primary-300);
+--action-color-state: var(--primary-500);
+--background: var(--neutral-100);
+--primary-background: var(--primary-100);
+--neutral-background: var(--neutral-200);
+}
+
+.darkmode {
+--font-color: var(--neutral-100);
+--action-color: var(--secondary-100);
+--action-color-state: var(--secondary-500);
+--background: var(--dark-100);
+--primary-background: var(--primary-500);
+--neutral-background: var(--neutral-900);
+}
+
+
+.page-layout > *,
+.full-width > * {
+  grid-column: content;
+  background:var(--debug);
+  
+  margin-block: 4vh;
+}
+
+.full > * {
+    background:var(--debug);
+}
+.page-layout,
+.full-width {
+  --minimum-content-padding: 1rem;
+
+  /** TRACK WIDTHS **/
+  --full-max-width: 1fr;
+  --page-max-width: 1304px;
+  --feature-max-width: 1080px;
+  --popout-max-width: 840px;
+  --content-max-width: 632px;
+  --inset-content-max-width: 408px;
+  --page-max-width: 86.24%; /* PAGE TRACK */
+  --feature-max-width: 71.43%; /* FEATURE TRACK */
+  --popout-max-width: 55.56%; /* POPOUT TRACK */
+  --content-max-width: 41.81%; /* CONTENT TRACK */
+  --inset-content-max-width: 26.98%; /* INSET CONTENT TRACK */
+  --page-max-width: clamp(768px, 86.24vw, 86.24%);
+  --feature-max-width: clamp(720px, 71.43vw, 71.43%);
+  --popout-max-width: clamp(640px, 55.56vw, 55.56%);
+  --content-max-width: clamp(480px, 41.81vw, 41.81%);
+  --inset-content-max-width: clamp(420px, 26.98vw, 26.98%);
+
+  /** TRACK SIZES **/
+  --full: minmax(var(--minimum-content-padding), 1fr);
+  --page: minmax(
+    0,
+    calc((var(--page-max-width) - var(--feature-max-width)) * 0.5)
+  );
+  --feature: minmax(
+    0,
+    calc((var(--feature-max-width) - var(--popout-max-width)) * 0.5)
+  );
+  --popout: minmax(
+    0,
+    calc((var(--popout-max-width) - var(--content-max-width)) * 0.5)
+  );
+  --content: minmax(
+    0,
+    calc((var(--content-max-width) - var(--inset-content-max-width)) * 0.5)
+  );
+  --inset-content: min(
+    var(--inset-content-max-width),
+    100% - var(--minimum-content-padding) * 2
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-start]
+    var(--full)
+    [page-start]
+    var(--page)
+    [feature-start]
+    var(--feature)
+    [popout-start]
+    var(--popout)
+    [content-start]
+    var(--content)
+    [inset-content-start]
+    var(--inset-content)
+    [inset-content-end]
+    var(--content)
+    [content-end]
+    var(--popout)
+    [popout-end]
+    var(--feature)
+    [feature-end]
+    var(--page)
+    [page-end]
+    var(--full)
+    [full-end];
+}
+
+/** CLASSES **/
+.full {
+  grid-column: full;
+}
+.full-start {
+  grid-column-start: full-start;
+}
+.full-end {
+  grid-column-end: full-end;
+}
+
+.page {
+  grid-column: page;
+}
+.page-start {
+  grid-column-start: page-start;
+}
+.page-end {
+  grid-column-end: page-end;
+}
+
+.feature {
+  grid-column: feature;
+}
+.feature-start {
+  grid-column-start: feature-start;
+}
+.feature-end {
+  grid-column-end: feature-end;
+}
+
+.popout {
+  grid-column: popout;
+}
+.popout-start {
+  grid-column-start: popout-start;
+}
+.popout-end {
+  grid-column-end: popout-end;
+}
+
+.content {
+  grid-column: content;
+}
+.content-start {
+  grid-column-start: content-start;
+}
+.content-end {
+  grid-column-end: content-end;
+}
+
+.inset-content {
+  grid-column: inset-content;
+}
+.inset-content-start {
+  grid-column-start: inset-content-start;
+}
+.inset-content-end {
+  grid-column-end: inset-content-end;
+}
+
+.full-width {
+  grid-column: full;
+}
+.full-content,
+.full-content-nopad {
+  grid-column: full;
+}
+.full-content {
+  padding-inline: var(--minimum-content-padding);
+}
+
+.full {
+  grid-column: full;
+  background:var(--debug);
+
+  text-align: center;
+}
+
+.page {
+  grid-column: page;
+
+  padding: 1rem;
+  text-align: center;
+}
+
+.feature {
+  grid-column: feature;
+
+  padding: 1rem;
+  text-align: center;
+}
+
+.popout {
+  grid-column: popout;
+
+  padding: 1rem;
+  text-align: center;
+}
+
+.content {
+  grid-column: content;
+
+  padding: 1rem;
+  text-align: center;
+}
+
+.inset-content {
+  grid-column: inset-content;
+
+
+  padding: 1rem;
+  text-align: center;
+}
+
+.exception {
+
+  padding: 1rem;
+}
+.nested-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr)); /* Min 240px, max 1fr */
+
+}
+
+/* Zorg dat er nooit een los item verschijnt */
+.nested-grid > div {
+  min-width: 0; /* Voorkomt overflow */
+  background:var(--debug);
+
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Als de ruimte te klein is, forceer alles onder elkaar */
+@media (max-width: 768px) {
+  .nested-grid {
+    grid-template-columns: 1fr; /* Alles onder elkaar */
+  }
+}
+
+  .column > * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }

@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  image: string; // URL naar de afbeelding
+  alt: string; // Beschrijvende alternatieve tekst (verplicht voor toegankelijkheid)
+  caption?: string;
+  size: "full" | "page" | "popout" | "inline";
+}
+
+const { image, alt, caption, size } = Astro.props;
+
+// Definieer sizes en widths voor responsieve ondersteuning
+const widths = [240, 540, 720, 1920];
+const sizes = {
+  full: `(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1920px`,
+  large: `(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1200px`,
+  inline: `(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 600px`,
+  page: `(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1920px`,
+  popout: `(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1920px`,
+};
+---
+
+<figure class={`image-block ${size}`}>
+  <Image
+    src={image}
+    alt={alt || "Image"}
+    widths={widths}
+    sizes={sizes[size]}
+    format="avif"
+    inferSize
+  />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .image-block {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .image-block.full img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-block.large img {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .image-block.inline img {
+    display: inline-block;
+    width: auto;
+    max-width: 50%;
+  }
+</style>

@@ -1,0 +1,80 @@
+---
+import TextBlock from "./TextBlock.astro";
+import ImageBlock from "./ImageBlock.astro";
+import VideoBlock from "./VideoBlock.astro";
+
+export interface Props {
+  columns: Array<{
+    _type: "textBlock" | "imageBlock" | "videoBlock";
+    [key: string]: any; // Flexibel om verschillende props door te geven
+  }>;
+}
+
+const { columns } = Astro.props;
+
+console.log("columns", columns);
+---
+
+<section class="multi-col-block full">
+  <div class={`columns columns-${columns.length}`}>
+    {
+      columns.map((column) => (
+        <div class="column">
+          {column._type === "textBlock" && (
+            <TextBlock>{column.content}</TextBlock>
+          )}
+          {column._type === "imageBlock" && (
+            <ImageBlock
+              image={column.image}
+              alt={column.alt}
+              size={column.size}
+            />
+          )}
+          {column._type === "videoBlock" && (
+            <VideoBlock
+              title={column.title}
+              description={column.description}
+              sources={column.sources}
+              size="full"
+            />
+          )}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .multi-col-block {
+    margin: 2rem 0;
+    display: block;
+  }
+
+  .columns {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .columns-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+export interface Props {
+  content?: any[];
+}
+
+const { content } = Astro.props;
+---
+
+<section class="text-block">
+  <!-- {content} -->
+  <slot />
+</section>
+
+<style>
+  .text-block {
+    padding: 2rem;
+  }
+  .text-block h3 {
+    font-size: 1.5rem;
+  }
+  .text-block h4 {
+    font-size: 1.25rem;
+  }
+</style>
