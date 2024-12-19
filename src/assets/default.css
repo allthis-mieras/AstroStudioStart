@@ -189,28 +189,28 @@
 .page {
   grid-column: page;
 
-  padding: 1rem;
+  
   text-align: center;
 }
 
 .feature {
   grid-column: feature;
 
-  padding: 1rem;
+  
   text-align: center;
 }
 
 .popout {
   grid-column: popout;
 
-  padding: 1rem;
+  
   text-align: center;
 }
 
 .content {
   grid-column: content;
 
-  padding: 1rem;
+  
   text-align: center;
 }
 
@@ -218,15 +218,12 @@
   grid-column: inset-content;
 
 
-  padding: 1rem;
+  
   text-align: center;
 }
 
-.exception {
 
-  padding: 1rem;
-}
-.nested-grid {
+.columns {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(0px, 1fr)); /* Min 240px, max 1fr */
@@ -234,22 +231,28 @@
 }
 
 /* Zorg dat er nooit een los item verschijnt */
-.nested-grid > div {
+.columns > div {
   min-width: 0; /* Voorkomt overflow */
   background:var(--debug);
 
-  padding: 1rem;
+ 
   text-align: center;
 }
-
-/* Als de ruimte te klein is, forceer alles onder elkaar */
-@media (max-width: 768px) {
-  .nested-grid {
-    grid-template-columns: 1fr; /* Alles onder elkaar */
-  }
-}
-
   .column > * {
     margin: 0 !important;
     padding: 0 !important;
+    width: 100%;
   }
+
+    .multi-col-block.full {
+    padding: 0 2rem;
+  }
+
+
+/* Als de ruimte te klein is, forceer alles onder elkaar */
+@media (max-width: 768px) {
+  .columns {
+    grid-template-columns: 1fr!important; /* Alles onder elkaar */
+  }
+}
+
