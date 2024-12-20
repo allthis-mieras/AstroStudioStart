@@ -27,8 +27,10 @@ const { title, description, sources, subtitle, thumb, size } = Astro.props;
     </video>
   </div>
   <figcaption>
-    <strong>{title}</strong>
-    {subtitle && <div class="subtitle">{subtitle}</div>}
+    <div class="title">
+      <h4>{title}</h4>
+      {subtitle && <h4 class="subtitle">{subtitle}</h4>}
+    </div>
     <p>{description}</p>
   </figcaption>
 </figure>
@@ -60,12 +62,16 @@ const { title, description, sources, subtitle, thumb, size } = Astro.props;
     text-align: left;
   }
 
+  figcaption .title {
+    display: flex;
+    gap: 0.5rem;
+  }
+
   figcaption .subtitle {
     font-style: italic;
     color: #777;
   }
 
   figcaption p {
-    margin-top: 0.5rem;
   }
 </style>
