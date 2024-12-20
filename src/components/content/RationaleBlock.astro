@@ -7,7 +7,7 @@ export interface Props {
 const { title, content } = Astro.props;
 ---
 
-<section class="rationale-block popout">
+<section class="rationale-block page">
   <h5 class="title">{title}</h5>
   <p>{content}</p>
 </section>
@@ -21,6 +21,7 @@ const { title, content } = Astro.props;
     font-size: 2rem;
     font-weight: 500;
     line-height: 125%;
+    text-wrap: balance;
   }
 
   .rationale-block .title {
