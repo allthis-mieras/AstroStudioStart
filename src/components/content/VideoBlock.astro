@@ -20,6 +20,7 @@ const { title, description, sources, subtitle, thumb, size } = Astro.props;
       preload="metadata"
       autoplay
       muted
+      loop
       playsinline
     >
       {sources.map((source) => <source src={source} type="video/mp4" />)}
@@ -60,6 +61,7 @@ const { title, description, sources, subtitle, thumb, size } = Astro.props;
     font-size: 0.9rem;
     color: #555;
     text-align: left;
+    text-wrap: balance;
   }
 
   figcaption .title {
