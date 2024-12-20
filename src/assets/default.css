@@ -219,6 +219,11 @@
   width: 100%;
 }
 
+.full  .column > figcaption {
+  padding: 0;
+
+}
+
 .multi-col-block.full {
   padding: 0 2rem;
 }
@@ -228,8 +233,12 @@ figure figcaption {
   
 }
 
-figure.full > figcaption {
+.full > figcaption {
   padding: 1rem;
+}
+
+.multi-col-block .column figcaption {
+  padding: 0 !important;
 }
 
 .text-block p + h3, .text-block p + h4 {

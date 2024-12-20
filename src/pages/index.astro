@@ -53,14 +53,41 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
     />
     <pre>VideoBlock.astro</pre>
     <VideoBlock
-      title="For Bigger Joyrides"
+      title="Title of this video"
       description="Introducing Chromecast. The easiest way to enjoy online video and music on your TV—for the times that call for bigger joyrides. For $35. Learn how to use Chromecast with YouTube and more at google.com/chromecast."
       sources={[
-        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        "https://test-videos.co.uk/vids/jellyfish/mp4/h265/1080/Jellyfish_1080_10s_2MB.mp4",
       ]}
       subtitle="By Google"
       thumb="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
       size="full"
+    />
+    <pre>MultiColBlock.astro</pre>
+    <MultiColBlock
+      columns={[
+        {
+          _type: "videoBlock",
+          title: "Voorbeeldvideo",
+          description: "Dit is een voorbeeld van een video.",
+          sources: [
+            "https://test-videos.co.uk/vids/jellyfish/mp4/h265/360/Jellyfish_360_10s_2MB.mp4",
+          ],
+          size: "inline",
+          thumb:
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+        },
+        {
+          _type: "videoBlock",
+          title: "Voorbeeldvideo",
+          description: "Dit is een voorbeeld van een video.",
+          sources: [
+            "https://test-videos.co.uk/vids/jellyfish/mp4/h265/360/Jellyfish_360_10s_2MB.mp4",
+          ],
+          size: "inline",
+          thumb:
+            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+        },
+      ]}
     />
     <pre>MultiColBlock.astro</pre>
     <MultiColBlock
@@ -84,7 +111,7 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
           title: "Voorbeeldvideo",
           description: "Dit is een voorbeeld van een video.",
           sources: [
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+            "https://test-videos.co.uk/vids/jellyfish/mp4/h265/360/Jellyfish_360_10s_2MB.mp4",
           ],
           size: "inline",
           thumb:
