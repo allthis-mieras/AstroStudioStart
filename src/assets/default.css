@@ -4,8 +4,8 @@
 --radius-large: 6px;
 --gap-default: 2rem;
 --font-measure: 70ch;
---font-family-default: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
---font-family-special: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif
+--font-family-default: 'Instrument Sans', Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+--font-family-special:  'Instrument Serif', serif;
 --font-color: var(--neutral-900);
 --action-color: var(--primary-300);
 --action-color-state: var(--primary-500);
@@ -51,7 +51,7 @@
   --popout-max-width: 55.56%; /* POPOUT TRACK */
   --content-max-width: 41.81%; /* CONTENT TRACK */
   --inset-content-max-width: 26.98%; /* INSET CONTENT TRACK */
-  --page-max-width: clamp(768px, 86.24vw, 86.24%);
+  --page-max-width: clamp(768px, calc(100vw - 4rem), calc(100vw - 4rem));
   --feature-max-width: clamp(720px, 71.43vw, 71.43%);
   --popout-max-width: clamp(640px, 55.56vw, 55.56%);
   --content-max-width: clamp(480px, 41.81vw, 41.81%);
@@ -221,6 +221,11 @@
 
 .multi-col-block.full {
   padding: 0 2rem;
+}
+
+figure figcaption {
+   padding: 1rem 0;
+  
 }
 
 figure.full > figcaption {

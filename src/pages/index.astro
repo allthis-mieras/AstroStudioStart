@@ -17,6 +17,13 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
       title="The question"
       content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel id cumque ratione, quisquam unde commodi error. "
     />
+    <pre>ImageBlock.astro</pre>
+    <ImageBlock
+      image="https://visobs.co/upload/reading-room-new-reader-4ba364.jpg"
+      caption="Full screen image"
+      alt="Nice alt text for SEO and screenreaders"
+      size="full"
+    />
     <pre>TextBlock.astro</pre>
     <TextBlock>
       <h3>Heading</h3>
@@ -34,10 +41,15 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
     </TextBlock>
     <pre>ImageBlock.astro</pre>
     <ImageBlock
-      image="https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg"
-      caption="A nice bird"
-      alt="A picture of a bird"
+      image="https://lab.pangrampangram.com/experiments/image-gallery/images/6.png"
+      caption="Description of the image"
+      alt="A very nice alt text"
       size="page"
+    />
+    <pre>RationaleBlock.astro</pre>
+    <RationaleBlock
+      title="The question"
+      content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel id cumque ratione, quisquam unde commodi error. "
     />
     <pre>VideoBlock.astro</pre>
     <VideoBlock
@@ -82,10 +94,10 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
     />
     <pre>TestimonialBlock.astro</pre>
     <TestimonialBlock
-      quote="This product completely changed the way we work. The results are outstanding!"
-      name="Jane Doe"
-      role="CEO"
-      company="Example Corp"
+      quote="‘I’m excited about this video diary. By replacing the diary with a camera, young people can easily imagine themselves in that situation back then, when Anne Frank lived. The idea took some getting used to, but I think it’s good that Anne Frank’s story has been transferred to modern times.’"
+      name="Jacqueline van Maarsen"
+      role="Anne Frank’s now 91-year-old friend"
+      company=""
     />
   </div>
 </Layout>
