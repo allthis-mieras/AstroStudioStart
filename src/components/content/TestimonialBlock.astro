@@ -9,7 +9,7 @@ export interface Props {
 const { quote, name, role, company } = Astro.props;
 ---
 
-<figure class="testimonial-block">
+<figure class="testimonial-block feature">
   <blockquote>
     <p>{quote}</p>
   </blockquote>
@@ -22,13 +22,11 @@ const { quote, name, role, company } = Astro.props;
 
 <style>
   .testimonial-block {
-    margin: 2rem auto;
     padding: 2rem;
-    border-left: 4px solid var(--primary-color, #333);
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    border-radius: 8px;
+    border: none;
+    background-color: var(--neutral-100);
+
+    border-radius: 0.5rem;
   }
 
   blockquote {

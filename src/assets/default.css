@@ -59,26 +59,11 @@
 
   /** TRACK SIZES **/
   --full: minmax(var(--minimum-content-padding), 1fr);
-  --page: minmax(
-    0,
-    calc((var(--page-max-width) - var(--feature-max-width)) * 0.5)
-  );
-  --feature: minmax(
-    0,
-    calc((var(--feature-max-width) - var(--popout-max-width)) * 0.5)
-  );
-  --popout: minmax(
-    0,
-    calc((var(--popout-max-width) - var(--content-max-width)) * 0.5)
-  );
-  --content: minmax(
-    0,
-    calc((var(--content-max-width) - var(--inset-content-max-width)) * 0.5)
-  );
-  --inset-content: min(
-    var(--inset-content-max-width),
-    100% - var(--minimum-content-padding) * 2
-  );
+  --page: minmax(0, calc((var(--page-max-width) - var(--feature-max-width)) * 0.5));
+  --feature: minmax(0, calc((var(--feature-max-width) - var(--popout-max-width)) * 0.5));
+  --popout: minmax(0, calc((var(--popout-max-width) - var(--content-max-width)) * 0.5));
+  --content: minmax(0, calc((var(--content-max-width) - var(--inset-content-max-width)) * 0.5));
+  --inset-content: min( var(--inset-content-max-width), 100% - var(--minimum-content-padding) * 2);
 
   display: grid;
   grid-template-columns:
@@ -188,40 +173,31 @@
 
 .page {
   grid-column: page;
-
-  
   text-align: center;
 }
 
 .feature {
   grid-column: feature;
-
-  
   text-align: center;
 }
 
 .popout {
   grid-column: popout;
-
-  
   text-align: center;
 }
 
 .content {
   grid-column: content;
-
-  
   text-align: center;
 }
 
 .inset-content {
   grid-column: inset-content;
-
-
-  
   text-align: center;
 }
 
+
+/* Content Blocks */
 
 .columns {
   display: grid;
@@ -234,20 +210,26 @@
 .columns > div {
   min-width: 0; /* Voorkomt overflow */
   background:var(--debug);
-
- 
   text-align: center;
 }
-  .column > * {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
-  }
 
-    .multi-col-block.full {
-    padding: 0 2rem;
-  }
+.column > * {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
 
+.multi-col-block.full {
+  padding: 0 2rem;
+}
+
+figure.full > figcaption {
+  padding: 1rem;
+}
+
+.text-block p + h3, .text-block p + h4 {
+  margin-top: 2rem; /* Of een andere gewenste waarde */
+}
 
 /* Als de ruimte te klein is, forceer alles onder elkaar */
 @media (max-width: 768px) {
@@ -256,3 +238,11 @@
   }
 }
 
+
+pre {
+  font-size: 0.675rem;
+  padding: 0.25rem;
+  background: rgba(255,0,0,0.2)!important;
+
+  
+}
