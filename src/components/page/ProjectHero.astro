@@ -63,6 +63,7 @@ const { title, intro, body, media } = Astro.props;
           sources={media.props.sources}
           size="page"
           thumb={media.props.thumb}
+          showCaption={false}
         />
       )
     }
@@ -73,7 +74,7 @@ const { title, intro, body, media } = Astro.props;
   .project-cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--gap-default);
+    gap: var(--space-xl);
     align-items: baseline;
   }
 
@@ -83,13 +84,13 @@ const { title, intro, body, media } = Astro.props;
     line-height: 100%;
     margin-top: var(--space-xl);
     margin-bottom: var(--space-m);
+    text-wrap: balance;
   }
 
   p {
     font-size: var(--fs--1);
     line-height: 133%;
     font-weight: 500;
-    text-wrap: balance;
   }
 
   .intro {
@@ -142,12 +143,13 @@ const { title, intro, body, media } = Astro.props;
   }
 
   .media {
-    margin-top: var(--space-xl);
+    margin-top: 2vw;
   }
 
   @media (max-width: 768px) {
     .project-cols {
       grid-template-columns: 1fr;
+      gap: var(--space-m);
     }
   }
 </style>
