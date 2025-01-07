@@ -22,6 +22,7 @@ const { title, description, sources, subtitle, thumb, size } = Astro.props;
       muted
       loop
       playsinline
+      aria-label={title}
     >
       {sources.map((source) => <source src={source} type="video/mp4" />)}
        Your browser does not support the video tag.

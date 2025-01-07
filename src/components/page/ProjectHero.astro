@@ -73,7 +73,8 @@ const { title, intro, body, media } = Astro.props;
   .project-cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2vw;
+    gap: var(--gap-default);
+    align-items: baseline;
   }
 
   .title {
@@ -81,13 +82,14 @@ const { title, intro, body, media } = Astro.props;
     font-weight: 200;
     line-height: 100%;
     margin-top: var(--space-xl);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-s);
   }
 
   p {
-    font-size: var(--fs-0);
+    font-size: var(--fs--1);
     line-height: 133%;
     font-weight: 500;
+    text-wrap: balance;
   }
 
   .intro {
