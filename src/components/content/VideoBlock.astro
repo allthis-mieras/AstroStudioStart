@@ -1,11 +1,11 @@
 ---
 export interface Props {
-  title: string; // Titel van de video
-  description: string; // Beschrijving van de video
+  title?: string; // Titel van de video
+  description?: string; // Beschrijving van de video
   sources: string[]; // Lijst met video-URL's (meerdere formaten mogelijk)
   subtitle?: string; // Ondertitel van de video
-  thumb?: string; // Thumbnail (optioneel)
-  size: "full" | "large" | "inline"; // Grootte opties
+  thumb: string; // Thumbnail (optioneel)
+  size: "full" | "page" | "large" | "inline"; // Grootte opties
 }
 
 const { title, description, sources, subtitle, thumb, size } = Astro.props;
@@ -28,11 +28,15 @@ const { title, description, sources, subtitle, thumb, size } = Astro.props;
     </video>
   </div>
   <figcaption>
-    <div class="title">
-      <h4>{title}</h4>
-      {subtitle && <h4 class="subtitle">{subtitle}</h4>}
-    </div>
-    <p>{description}</p>
+    {
+      title && (
+        <div class="title">
+          <h4>{title}</h4>
+          {subtitle && <h4 class="subtitle">{subtitle}</h4>}
+        </div>
+      )
+    }
+    {description && <p>{description}</p>}
   </figcaption>
 </figure>
 

@@ -1,0 +1,145 @@
+---
+import ImageBlock from "../content/ImageBlock.astro";
+import VideoBlock from "../content/VideoBlock.astro";
+
+export interface Media {
+  type: "image" | "video"; // Mediatype
+  props: any; // Props voor het specifieke mediacomponent
+}
+
+export interface Props {
+  title: string; // Titel van het project
+  intro: string; // Korte introductie
+  body: string; // Hoofdtekst
+  media: Media; // Media-object
+}
+
+const { title, intro, body, media } = Astro.props;
+---
+
+<section class="project-hero full-width">
+  <div class="project-info page">
+    <h1 class="title">{title}</h1>
+    <div class="project-cols">
+      <p class="intro">{intro}</p>
+      <p class="body">{body}</p>
+    </div>
+    <div class="meta">
+      <div class="client">
+        <h6>Client</h6>
+        <ul>
+          <li>Business Inc.</li>
+        </ul>
+      </div>
+      <div class="industry">
+        <h6>Industry</h6>
+        <ul>
+          <li>Industry</li>
+        </ul>
+      </div>
+      <div class="services">
+        <h6>Services</h6>
+        <ul>
+          <li>Service</li>
+          <li>Service</li>
+          <li>Service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="media page">
+    {
+      media.type === "image" && (
+        <ImageBlock
+          image={media.props.image}
+          alt={media.props.alt}
+          size="page"
+        />
+      )
+    }
+    {
+      media.type === "video" && (
+        <VideoBlock
+          sources={media.props.sources}
+          size="page"
+          thumb={media.props.thumb}
+        />
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .project-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+  }
+
+  .title {
+    font-size: var(--fs-8);
+    line-height: 100%;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xs);
+  }
+
+  p {
+    font-size: var(--fs-0);
+    line-height: 133%;
+    font-weight: 500;
+  }
+
+  .intro {
+    font-size: var(--fs-1);
+  }
+
+  .meta {
+    display: flex;
+    gap: var(--space-xs);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: var(--fs--2);
+
+    > * {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-2xs);
+      /* flex-direction: column; */
+    }
+
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+      margin-bottom: var(--space-xs);
+    }
+
+    ul {
+      display: flex;
+      /* flex-direction: column; */
+      gap: var(--space-2xs);
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: inherit
+        font-weight: 500;
+        line-height: 133%;
+        list-style: none;
+        padding: 0.25em 0.675em;
+        background: red;
+        border-radius: 100vw;
+      }
+    }
+  }
+
+  .media {
+    margin-top: var(--space-xl);
+  }
+
+  @media (max-width: 768px) {
+    .project-cols {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

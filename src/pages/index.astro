@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectHero from "../components/page/ProjectHero.astro";
 import TextBlock from "../components/content/TextBlock.astro";
 import RationaleBlock from "../components/content/RationaleBlock.astro";
 import ImageBlock from "../components/content/ImageBlock.astro";
@@ -12,6 +13,35 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
 
 <Layout>
   <div class="page-layout">
+    <ProjectHero
+      title="Random Project"
+      intro="Lorem ipsum dolor sit amet consectetur. Bibendum nam aliquet mauris tellus justo mi malesuada dictum pulvinar. Habitant nulla magna rutrum purus cras arcu scelerisque purus. Integer augue massa odio vulputate leo justo."
+      body="Lorem ipsum dolor sit amet consectetur. Tellus neque blandit et ut. Pharetra varius adipiscing mattis odio. Sem dapibus ornare hendrerit amet auctor eu. Elit est maecenas vel fermentum. Lectus fermentum molestie commodo elementum. Urna est dui magna commodo sed commodo sed aliquet sagittis. "
+      media={{
+        type: "video",
+        props: {
+          title: "Anne Frank Diary",
+          description: "A video diary following Anne Frank's story.",
+          sources: [
+            "https://test-videos.co.uk/vids/jellyfish/mp4/h265/1080/Jellyfish_1080_10s_2MB.mp4",
+          ],
+          thumb: "https://example.com/thumb.jpg",
+        },
+      }}
+    />
+
+    <!-- <ProjectHero
+      title="Video diaries of Anne Frank"
+      intro="The Anne Frank video diary can be seen on YouTube in fifteen episodes. Luna Cruz Perez plays Anne Frank, sharing her life in the Secret Annex, her thoughts and her feelings with the camera. "
+      body="Anne Frank video diary follows Anne Frank from 29 March 1944 onwards. She is 14 years old and has been living in hiding for over a year and a half, together with her parents Otto and Edith, sister Margot, Auguste and Hermann van Pels, their son Peter, and Fritz Pfeffer. Anne films herself and the events in the Secret Annex, looks back on the time before they went into hiding, talks about the war, and shares her deepest thoughts and feelings. The video diary ends on 4 August 1944, when Anne and the seven other people from the Secret Annex, as well as two of their non-Jewish helpers, are arrested."
+      media={{
+        type: "image",
+        props: {
+          image: "https://visobs.co/upload/reading-room-new-reader-4ba364.jpg",
+          alt: "Descriptive alt text for the image",
+        },
+      }}
+    /> -->
     <pre>RationaleBlock.astro</pre>
     <RationaleBlock
       title="The question"
@@ -59,7 +89,7 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
         "https://test-videos.co.uk/vids/jellyfish/mp4/h265/1080/Jellyfish_1080_10s_2MB.mp4",
       ]}
       subtitle="By Google"
-      thumb="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg"
+      thumb="https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg"
       size="full"
     />
     <pre>MultiColBlock.astro</pre>
@@ -73,8 +103,7 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
             "https://test-videos.co.uk/vids/jellyfish/mp4/h265/360/Jellyfish_360_10s_2MB.mp4",
           ],
           size: "inline",
-          thumb:
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+          thumb: "https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg",
         },
         {
           _type: "videoBlock",
@@ -84,8 +113,7 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
             "https://test-videos.co.uk/vids/jellyfish/mp4/h265/360/Jellyfish_360_10s_2MB.mp4",
           ],
           size: "inline",
-          thumb:
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+          thumb: "https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg",
         },
       ]}
     />
@@ -114,8 +142,7 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
             "https://test-videos.co.uk/vids/jellyfish/mp4/h265/360/Jellyfish_360_10s_2MB.mp4",
           ],
           size: "inline",
-          thumb:
-            "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+          thumb: "https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg",
         },
       ]}
     />

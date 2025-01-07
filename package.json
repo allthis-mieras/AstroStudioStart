@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.0.9"
+    "@fontsource-variable/geist-mono": "^5.0.1",
+    "astro": "^5.0.9",
+    "utopia-core-scss": "^1.2.1"
   },
   "devDependencies": {
     "sass-embedded": "^1.83.0"
