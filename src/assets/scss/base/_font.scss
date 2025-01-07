@@ -7,43 +7,43 @@
 
 
 /* Instrument Serif - Italic */
-@font-face {
-  font-family: 'Instrument Serif';
-  src: url('/fonts/InstrumentSerif-Italic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: 'Instrument Serif';
+//   src: url('/fonts/InstrumentSerif-Italic.ttf') format('truetype');
+//   font-style: italic;
+//   font-weight: normal;
+//   font-display: swap;
+// }
 
 /* Instrument Serif - Regular */
-@font-face {
-  font-family: 'Instrument Serif';
-  src: url('/fonts/InstrumentSerif-Regular.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: 'Instrument Serif';
+//   src: url('/fonts/InstrumentSerif-Regular.ttf') format('truetype');
+//   font-style: normal;
+//   font-weight: normal;
+//   font-display: swap;
+// }
 
 /* Instrument Sans - Variable (Weight & Width) */
-@font-face {
-  font-family: 'Instrument Sans';
-  src: url('/fonts/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 1 1000;
-  /* Gehele range van het font */
-  font-stretch: 75% 125%;
-  /* Optioneel: Voor breedte */
-  font-display: swap;
-}
+// @font-face {
+//   font-family: 'Instrument Sans';
+//   src: url('/fonts/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
+//   font-weight: 1 1000;
+//   /* Gehele range van het font */
+//   font-stretch: 75% 125%;
+//   /* Optioneel: Voor breedte */
+//   font-display: swap;
+// }
 
 /* Instrument Sans - Italic Variable (Weight & Width) */
-@font-face {
-  font-family: 'Instrument Sans';
-  src: url('/fonts/InstrumentSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 1 1000;
-  font-stretch: 75% 125%;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: 'Instrument Sans';
+//   src: url('/fonts/InstrumentSans-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+//   font-style: italic;
+//   font-weight: 1 1000;
+//   font-stretch: 75% 125%;
+//   font-display: swap;
+// }
 
 body {
   font-family: var(--font-family-default);
