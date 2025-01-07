@@ -15,7 +15,7 @@ const { columns } = Astro.props;
 console.log("columns", columns);
 ---
 
-<section class="multi-col-block full">
+<section class="multi-col-block page">
   <div class={`columns columns-${columns.length}`}>
     {
       columns.map((column) => (
@@ -35,6 +35,7 @@ console.log("columns", columns);
               title={column.title}
               description={column.description}
               sources={column.sources}
+              thumb={column.thumb}
               size="full"
             />
           )}
@@ -51,7 +52,7 @@ console.log("columns", columns);
 
   .columns {
     display: grid;
-    gap: 2vw;
+    gap: var(--space-m);
   }
 
   .columns-1 {

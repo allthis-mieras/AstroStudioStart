@@ -30,7 +30,13 @@ const sizes = {
     format="avif"
     inferSize
   />
-  {caption && <figcaption>{caption}</figcaption>}
+  {
+    caption && (
+      <figcaption>
+        <p>{caption}</p>
+      </figcaption>
+    )
+  }
 </figure>
 
 <style>
@@ -42,5 +48,16 @@ const sizes = {
   img {
     width: 100%;
     height: auto;
+  }
+  figcaption {
+    font-size: var(--fs--2);
+    text-align: left;
+    text-wrap: balance;
+  }
+
+  figcaption p {
+    color: hsl(from var(--font-color) h s l / 70%);
+    line-height: 133%;
+    margin-top: 0.25em;
   }
 </style>

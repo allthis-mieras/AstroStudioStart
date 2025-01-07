@@ -234,13 +234,15 @@ body {
 
 }
 
-.multi-col-block.full {
-  padding: 0 2rem;
-}
+
 
 figure figcaption {
-   padding: 1rem 0;
+   grid-column: page;
   
+}
+
+:not(.full) > figcaption {
+  padding: 1rem 0;
 }
 
 .full > figcaption {
@@ -248,7 +250,7 @@ figure figcaption {
 }
 
 .multi-col-block .column figcaption {
-  padding: 0 !important;
+  padding: 1rem 0 !important;
 }
 
 .text-block p + h3, .text-block p + h4 {
@@ -267,6 +269,7 @@ pre {
   font-size: 0.675rem;
   padding: 0.25rem;
   background: rgba(255,0,0,0.2)!important;
+  display: none;
 
   
 }
