@@ -23,15 +23,17 @@ const { quote, name, role, company } = Astro.props;
 <style>
   .testimonial-block {
     padding: 2rem;
+    text-align: center;
   }
 
   blockquote {
     margin: 0;
     padding: 0;
     font-family: var(--font-family-special);
-    font-size: clamp(2rem, 1.3455rem + 2.9091vw, 6rem);
+    font-size: var(--fs-5);
     color: var(--color-neutral-100);
     line-height: 112.5%;
+    text-wrap: balance;
   }
 
   blockquote p {

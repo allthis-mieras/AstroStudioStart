@@ -2,10 +2,11 @@
 :root {
 --radius-small: 3px;
 --radius-large: 6px;
---gap-default: 2rem;
+--gap-default: var(--space-s);
 --font-measure: 70ch;
 --font-family-default: 'Instrument Sans', Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 --font-family-special:  'Instrument Serif', serif;
+--font-mono: 'Geist Mono Variable', monospace;
 --font-color: var(--neutral-900);
 --action-color: var(--primary-300);
 --action-color-state: var(--primary-500);
@@ -29,7 +30,7 @@
   grid-column: content;
   background:var(--debug);
   
-  margin-block: 4vh;
+  margin-block: var(--space-s);
 }
 
 .full > * {
@@ -39,19 +40,22 @@
 .full-width {
   --minimum-content-padding: 1rem;
 
-  /** TRACK WIDTHS **/
+  
   --full-max-width: 1fr;
+  /** pixels **/
   --page-max-width: 1304px;
   --feature-max-width: 1080px;
   --popout-max-width: 840px;
   --content-max-width: 632px;
   --inset-content-max-width: 408px;
-  --page-max-width: 86.24%; /* PAGE TRACK */
-  --feature-max-width: 71.43%; /* FEATURE TRACK */
-  --popout-max-width: 55.56%; /* POPOUT TRACK */
-  --content-max-width: 41.81%; /* CONTENT TRACK */
-  --inset-content-max-width: 26.98%; /* INSET CONTENT TRACK */
-  --page-max-width: clamp(768px, calc(100vw - 4rem), calc(100vw - 4rem));
+  /* Percentages */
+  --page-max-width: 86.24%;
+  --feature-max-width: 71.43%;
+  --popout-max-width: 55.56%; 
+  --content-max-width: 41.81%;
+  --inset-content-max-width: 26.98%; 
+  /* Clamp */
+  --page-max-width: clamp(768px, calc(100vw - 4rem), calc(100vw - var(--space-2xl)));
   --feature-max-width: clamp(720px, 71.43vw, 71.43%);
   --popout-max-width: clamp(640px, 55.56vw, 55.56%);
   --content-max-width: clamp(480px, 41.81vw, 41.81%);
@@ -168,32 +172,32 @@
   grid-column: full;
   background:var(--debug);
 
-  text-align: center;
+
 }
 
 .page {
   grid-column: page;
-  text-align: center;
+  
 }
 
 .feature {
   grid-column: feature;
-  text-align: center;
+  
 }
 
 .popout {
   grid-column: popout;
-  text-align: center;
+  
 }
 
 .content {
   grid-column: content;
-  text-align: center;
+  
 }
 
 .inset-content {
   grid-column: inset-content;
-  text-align: center;
+  
 }
 
 
