@@ -7,26 +7,48 @@
 --font-family-default: 'Instrument Sans Variable', Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 --font-family-special:  'Instrument Serif', serif;
 --font-mono: 'Geist Mono Variable', monospace;
---font-color: var(--neutral-900);
+ --white: #fdfdfa;
+    --black: #4d4d4d;
+    --primary: #00b7c6;
+    --grey--dark: #aca79a;
+--font-color: var(--black);
+--background: var(--white);
 --action-color: var(--primary-300);
 --action-color-state: var(--primary-500);
---background: var(--neutral-100);
 --primary-background: var(--primary-100);
 --neutral-background: var(--neutral-200);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root{
-  --font-color: var(--neutral-100);
+  :root[data-theme="dark"] {
+    --white: #4d4d4d;
+    --black: #efeeeb;
+    --primary: #ff851b;
+    --font-color: var(--neutral-100);
   --action-color: var(--secondary-100);
   --action-color-state: var(--secondary-500);
   --background: var(--dark-100);
   --primary-background: var(--primary-500);
   --neutral-background: var(--neutral-900);
   }
-} 
+/* @media (prefers-color-scheme: dark) {
+  :root{
+  --font-color: var(--neutral-100);
+  --background: var(--dark-100);
+  --action-color: var(--secondary-100);
+  --action-color-state: var(--secondary-500);
+  --primary-background: var(--primary-500);
+  --neutral-background: var(--neutral-900);
+  }
+}  */
+
+ 
 
 
+
+body {
+    color: var(--black);
+    background: var(--white);
+  }
 
 .page-layout > *,
 .full-width > * {

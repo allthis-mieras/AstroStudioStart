@@ -6,9 +6,18 @@ export interface Props {
   subtitle?: string; // Ondertitel van de video
   thumb: string; // Thumbnail (optioneel)
   size: "full" | "page" | "large" | "inline"; // Grootte opties
+  showCaption?: boolean; // Optie om figcaption te tonen of te verbergen
 }
 
-const { title, description, sources, subtitle, thumb, size } = Astro.props;
+const {
+  title,
+  description,
+  sources,
+  subtitle,
+  thumb,
+  size,
+  showCaption = true,
+} = Astro.props;
 ---
 
 <figure class={`video-block ${size}`}>
@@ -22,28 +31,30 @@ const { title, description, sources, subtitle, thumb, size } = Astro.props;
       muted
       loop
       playsinline
+      aria-label={title}
     >
       {sources.map((source) => <source src={source} type="video/mp4" />)}
        Your browser does not support the video tag.
     </video>
   </div>
-  <figcaption>
-    {
-      title && (
-        <div class="title">
-          <h4>{title}</h4>
-          {subtitle && <h4 class="subtitle">{subtitle}</h4>}
-        </div>
-      )
-    }
-    {description && <p>{description}</p>}
-  </figcaption>
+  {
+    showCaption && (
+      <figcaption>
+        {title && (
+          <div class="title">
+            <h4>{title}</h4>
+            {subtitle && <h4 class="subtitle">{subtitle}</h4>}
+          </div>
+        )}
+        {description && <p>{description}</p>}
+      </figcaption>
+    )
+  }
 </figure>
 
 <style>
   .video-block {
     display: block;
-
     width: 100%;
     text-align: center;
   }

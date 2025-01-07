@@ -6,6 +6,7 @@ import "@fontsource-variable/geist-mono";
 import "../assets/scss/globals.scss";
 import "../assets/default.css";
 import SiteMeta from "../components/SiteMeta.astro";
+import DarkMode from "../components/DarkMode.astro";
 
 // import Header from "../components/Header.astro";
 // import Footer from "../components/Footer.astro";
@@ -43,6 +44,7 @@ const {
   </head>
   <body>
     <slot />
+    <DarkMode />
     <style>
       html,
       body {
