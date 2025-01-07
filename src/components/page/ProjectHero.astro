@@ -18,8 +18,8 @@ const { title, intro, body, media } = Astro.props;
 ---
 
 <section class="project-hero full-width">
-  <div class="project-info page">
-    <h1 class="title">{title}</h1>
+  <h1 class="title page">{title}</h1>
+  <div class="info page">
     <div class="project-cols">
       <p class="intro">{intro}</p>
       <p class="body">{body}</p>
@@ -71,11 +71,8 @@ const { title, intro, body, media } = Astro.props;
 </section>
 
 <style>
-  .project-cols {
+  .project-hero {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-    align-items: baseline;
   }
 
   .title {
@@ -85,6 +82,13 @@ const { title, intro, body, media } = Astro.props;
     margin-top: var(--space-xl);
     margin-bottom: var(--space-m);
     text-wrap: balance;
+  }
+
+  .project-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: baseline;
   }
 
   p {
@@ -150,6 +154,12 @@ const { title, intro, body, media } = Astro.props;
     .project-cols {
       grid-template-columns: 1fr;
       gap: var(--space-m);
+    }
+    .info {
+      order: 2;
+    }
+    .media {
+      order: 1;
     }
   }
 </style>
