@@ -256,8 +256,17 @@ figure figcaption {
   padding: 1rem 0 !important;
 }
 
-.text-block p + h3, .text-block p + h4 {
+
+
+.text-block p + h3,
+.text-block p + h4,
+.text-block p + h5,
+.text-block p + h6 {
   margin-top: 2rem; /* Of een andere gewenste waarde */
+}
+
+.text-block p + p {
+  margin-top: 1rem; /* Of een andere gewenste waarde */
 }
 
 /* Als de ruimte te klein is, forceer alles onder elkaar */

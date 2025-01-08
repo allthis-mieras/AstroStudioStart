@@ -78,6 +78,21 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
       alt="A very nice alt text"
       size="page"
     />
+    <pre>TextBlock.astro</pre>
+    <TextBlock>
+      <h3>Heading</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+    </TextBlock>
     <pre>RationaleBlock.astro</pre>
     <RationaleBlock
       title="The question"
@@ -154,15 +169,9 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
         illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
       </p>
     </TextBlock>
-    <pre>MultiColBlock.astro</pre>
+
     <MultiColBlock
       columns={[
-        {
-          _type: "textBlock",
-          content:
-            "<h4>Heading</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde, consequatur corrupti in quod nesciunt inventore harum quo minus repellat illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!</p>",
-        },
-
         {
           _type: "imageBlock",
           image:
@@ -172,20 +181,44 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
           caption: "Een mooie afbeelding",
         },
         {
-          _type: "videoBlock",
-          title: "Voorbeeldvideo",
-          description: "Dit is een voorbeeld van een video.",
-          sources: [
-            "https://test-videos.co.uk/vids/jellyfish/mp4/h265/1080/Jellyfish_1080_10s_5MB.mp4",
-            "https://test-videos.co.uk/vids/jellyfish/mp4/h264/720/Jellyfish_720_10s_2MB.mp4",
-          ],
-          size: "inline",
-          thumb: "https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg",
-          showCaption: false,
+          _type: "imageBlock",
+          image:
+            "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
+          alt: "Een voorbeeldafbeelding",
+          size: "full",
+          caption: "Een mooie afbeelding",
+        },
+        {
+          _type: "imageBlock",
+          image:
+            "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
+          alt: "Een voorbeeldafbeelding",
+          size: "full",
+          caption: "Een mooie afbeelding",
         },
       ]}
     />
-
+    <pre>MultiColBlock.astro</pre>
+    <MultiColBlock
+      size="feature"
+      columns={[
+        {
+          _type: "textBlock",
+          content:
+            "<h4>Heading</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde, consequatur corrupti in quod nesciunt inventore harum quo minus repellat illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!</p>",
+        },
+        {
+          _type: "textBlock",
+          content:
+            "<h4>Heading</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde, consequatur corrupti in quod nesciunt inventore harum quo minus repellat illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!</p>",
+        },
+        {
+          _type: "textBlock",
+          content:
+            "<h4>Heading</h4><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde, consequatur corrupti in quod nesciunt inventore harum quo minus repellat illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!</p>",
+        },
+      ]}
+    />
     <pre>TestimonialBlock.astro</pre>
     <TestimonialBlock
       quote="‘I’m excited about this video diary. By replacing the diary with a camera, young people can easily imagine themselves in that situation back then, when Anne Frank lived. The idea took some getting used to, but I think it’s good that Anne Frank’s story has been transferred to modern times.’"
