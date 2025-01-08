@@ -18,10 +18,10 @@ console.log("columns", columns);
 <section class="multi-col-block page">
   <div class={`columns columns-${columns.length}`}>
     {
-      columns.map((column) => (
+      columns.map((column, index) => (
         <div class="column">
           {column._type === "textBlock" && (
-            <TextBlock>{column.content}</TextBlock>
+            <TextBlock content={column.content} />
           )}
           {column._type === "imageBlock" && (
             <ImageBlock
@@ -45,7 +45,6 @@ console.log("columns", columns);
     }
   </div>
 </section>
-
 <style>
   .multi-col-block {
     display: block;
