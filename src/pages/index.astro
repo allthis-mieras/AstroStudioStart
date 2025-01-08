@@ -95,6 +95,21 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
       thumb="https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg"
       size="full"
     />
+    <pre>TextBlock.astro</pre>
+    <TextBlock>
+      <h3>Heading</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+      <h4>Subheading</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+    </TextBlock>
     <pre>MultiColBlock.astro</pre>
     <MultiColBlock
       columns={[
@@ -108,6 +123,7 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
           ],
           size: "inline",
           thumb: "https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg",
+          showCaption: false,
         },
         {
           _type: "videoBlock",
@@ -119,9 +135,25 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
           ],
           size: "inline",
           thumb: "https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg",
+          showCaption: false,
         },
       ]}
     />
+    <pre>TextBlock.astro</pre>
+    <TextBlock>
+      <h3>Heading</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+      <h4>Subheading</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde,
+        consequatur corrupti in quod nesciunt inventore harum quo minus repellat
+        illo nobis nostrum deserunt atque maiores obcaecati natus, eum earum!
+      </p>
+    </TextBlock>
     <pre>MultiColBlock.astro</pre>
     <MultiColBlock
       columns={[
@@ -149,9 +181,11 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
           ],
           size: "inline",
           thumb: "https://visobs.co/upload/stefan-georgi-nyc-2014-926d1f.jpg",
+          showCaption: false,
         },
       ]}
     />
+
     <pre>TestimonialBlock.astro</pre>
     <TestimonialBlock
       quote="‘I’m excited about this video diary. By replacing the diary with a camera, young people can easily imagine themselves in that situation back then, when Anne Frank lived. The idea took some getting used to, but I think it’s good that Anne Frank’s story has been transferred to modern times.’"
