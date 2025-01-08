@@ -128,7 +128,7 @@ const { title, intro, body, media } = Astro.props;
     ul {
       display: flex;
       /* flex-direction: column; */
-      gap: var(--space-2xs);
+      gap: var(--space-3xs);
       padding: 0;
       margin: 0;
 
@@ -147,7 +147,7 @@ const { title, intro, body, media } = Astro.props;
   }
 
   .media {
-    margin-top: 2vw;
+    margin-top: calc(var(--space-l) + 2vw);
   }
 
   @media (max-width: 768px) {

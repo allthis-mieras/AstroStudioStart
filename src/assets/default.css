@@ -55,7 +55,10 @@ body {
   grid-column: content;
   background:var(--debug);
   
-  margin-block: var(--space-s);
+}
+
+.page-layout > * {
+  margin-block: var(--space-l);
 }
 
 .full > * {
