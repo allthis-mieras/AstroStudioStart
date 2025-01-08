@@ -1,18 +1,25 @@
 ---
 export interface Props {
-  content?: any[];
+  content?: string; // HTML-content als string
 }
 
 const { content } = Astro.props;
 ---
 
 <section class="text-block">
-  <!-- {content} -->
-  <slot />
+  {
+    content ? (
+      // Direct HTML-injectie
+      <div set:html={content} />
+    ) : (
+      // Gebruik slot als er geen content is
+      <slot />
+    )
+  }
 </section>
-
 <style>
   .text-block {
+    text-align: left;
   }
   .text-block h3 {
     font-size: 1.5rem;
@@ -20,9 +27,10 @@ const { content } = Astro.props;
   .text-block h4 {
     font-size: 1.25rem;
   }
-
-  .text-block p + h3,
-  .text-block p + h4 {
-    margin-top: 2rem; /* Of een andere gewenste waarde */
+  .text-block h5 {
+    font-size: 1.125rem;
+  }
+  .text-block h6 {
+    font-size: 1.125rem;
   }
 </style>

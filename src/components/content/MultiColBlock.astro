@@ -8,26 +8,28 @@ export interface Props {
     _type: "textBlock" | "imageBlock" | "videoBlock";
     [key: string]: any; // Flexibel om verschillende props door te geven
   }>;
+  size?: "page" | "feature"; // Optional size property
 }
 
-const { columns } = Astro.props;
+const { columns, size = "page" } = Astro.props;
 
 console.log("columns", columns);
 ---
 
-<section class="multi-col-block page">
+<section class={`multi-col-block ${size}`}>
   <div class={`columns columns-${columns.length}`}>
     {
-      columns.map((column) => (
+      columns.map((column, index) => (
         <div class="column">
           {column._type === "textBlock" && (
-            <TextBlock>{column.content}</TextBlock>
+            <TextBlock content={column.content} />
           )}
           {column._type === "imageBlock" && (
             <ImageBlock
               image={column.image}
               alt={column.alt}
               size={column.size}
+              caption={column.caption}
             />
           )}
           {column._type === "videoBlock" && (
@@ -45,7 +47,6 @@ console.log("columns", columns);
     }
   </div>
 </section>
-
 <style>
   .multi-col-block {
     display: block;
