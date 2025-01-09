@@ -1,0 +1,47 @@
+---
+import { Tweet, Vimeo, YouTube } from "astro-embed";
+
+const { url, size = "inline", ...props } = Astro.props;
+
+function getTypeFromUrl(url: string): string {
+  if (url.includes("twitter.com")) {
+    return "twitter";
+  } else if (url.includes("youtube.com") || url.includes("youtu.be")) {
+    return "youtube";
+  } else if (url.includes("vimeo.com")) {
+    return "vimeo";
+  } else {
+    return "unknown";
+  }
+}
+
+function getSizeClass(size: string) {
+  switch (size) {
+    case "full":
+      return "full";
+    case "page":
+      return "page";
+    case "feature":
+      return "feature";
+    default:
+      return "inline";
+  }
+}
+
+const type = getTypeFromUrl(url);
+const embedId = url.split("/").pop();
+---
+
+<div class={`embed ${getSizeClass(size)}`}>
+  {type === "twitter" && <Tweet id={embedId} {...props} />}
+  {type === "youtube" && <YouTube id={embedId} {...props} />}
+  {type === "vimeo" && <Vimeo id={embedId} {...props} />}
+</div>
+
+<style is:global>
+  .embed > * {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
