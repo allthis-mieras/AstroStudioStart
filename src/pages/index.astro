@@ -7,6 +7,8 @@ import ImageBlock from "../components/content/ImageBlock.astro";
 import VideoBlock from "../components/content/VideoBlock.astro";
 import MultiColBlock from "../components/content/MultiColBlock.astro";
 import TestimonialBlock from "../components/content/TestimonialBlock.astro";
+import EmbedBlock from "../components/content/EmbedBlock-ifm.astro";
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -225,6 +227,14 @@ import TestimonialBlock from "../components/content/TestimonialBlock.astro";
       name="Jacqueline van Maarsen"
       role="Anne Frank’s now 91-year-old friend"
       company=""
+    />
+
+    <EmbedBlock service="youtube" id="A2gmT3SR1vI" />
+
+    <EmbedBlock
+      service="vimeo"
+      id="776749483"
+      title='Apple "Escape From The Office"'
     />
   </div>
 </Layout>

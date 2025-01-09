@@ -1,0 +1,21 @@
+---
+interface Props {
+  service: "youtube" | "vimeo";
+  id: string;
+  title?: string;
+  autoscale?: boolean;
+}
+
+const { service, id, title, autoscale = true } = Astro.props;
+---
+
+<div class="full-width">
+  <div
+    data-service={service}
+    data-id={id}
+    data-title={title}
+    data-autoscale={autoscale ? "" : undefined}
+    class="inline"
+  >
+  </div>
+</div>
