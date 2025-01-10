@@ -292,7 +292,7 @@ div[data-service] .cll iframe{
     border: none;
     max-width: 100%;
     width: 100%;
-    background: #fff;
+    background: #000;
     display: block;
     visibility: hidden;
     opacity: 0;
@@ -459,4 +459,8 @@ div.c-an [data-placeholder]{
     transition: opacity .3s ease,
                 visibility .3s ease;
     transition-delay: .1s;
+}
+
+iframe .player .vp-video-wrapper .vp-preview {
+    background-color: #000 !important;
 }
