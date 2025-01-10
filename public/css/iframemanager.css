@@ -1,23 +1,25 @@
 :root {
-    --im-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --im-font-family: var(--font-font-family-default);
 
-    --im-color: #fff;
-    --im-bg: #0b1016;
+    --im-color:#fff;
+    --im-bg: var(--black);
 
-    --im-link-color: #5fb3fb;
-    --im-link-hover-color: rgba(95, 178, 251, 0.682);
+    --im-link-color:#fff;
+    --im-link-hover-color: hsl(from var(--im-link-color) h s l / 0.5);
+    
 
-    --im-btn-color: #fff;
-    --im-btn-bg: rgba(0, 102, 219, 0.84);
-    --im-btn-hover-bg: rgba(9, 80, 161, 0.89);
-    --im-btn-active-box-shadow: 0 0 0 .25em rgba(24, 104, 250, 0.24);
+    --im-btn-color: var(--white);
+    --im-btn-bg: var(--primary);
+   
+    --im-btn-hover-bg:hsl(from var(--primary) h s calc(l - 10));
+    --im-btn-active-box-shadow: 0 0 0 .25em  hsl(from var(--primary) h s l / 90%);
 
-    --im-btn-s-color: var(--im-bg);
-    --im-btn-s-bg: rgba(225, 239, 255, .8);
-    --im-btn-s-hover-bg: rgba(225, 239, 255, .95);
+    --im-btn-s-color: var(--bg);
+    --im-btn-s-bg: hsl(from var(--grey--dark) h s calc(l + 10));
+    --im-btn-s-hover-bg: hsl(from var(--grey--dark) h s calc(l + 40));
     --im-btn-s-active-bg: rgba(225, 239, 255, .6);
 
-    --im-overlay-bg: linear-gradient(14deg, rgba(30,56,97,1) 0%, rgba(206,220,233,0.118) 100%)
+    --im-overlay-bg: linear-gradient(14deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.118) 100%)
 }
 
 div[data-service],
@@ -64,7 +66,7 @@ div[data-service]{
     min-height: 9.375rem;
     min-width: 18.75rem;
     position: relative;
-    background-color: var(--im-bg);
+    background-color: var(--bg);
     overflow: hidden;
 }
 
@@ -229,7 +231,8 @@ div[data-service] .cll .c-l-b{
     position: relative;
     padding: .975em 1.1em;
     background: var(--im-btn-bg);
-    border-radius: .3125em;
+    border-radius: 100vw;
+    border: 0px solid var(--im-btn-bg);
     font-size: .77em;
     color: var(--im-btn-color);
     font-weight: 600;

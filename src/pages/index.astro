@@ -229,12 +229,37 @@ import EmbedBlock from "../components/content/EmbedBlock-ifm.astro";
       company=""
     />
 
-    <EmbedBlock service="youtube" id="A2gmT3SR1vI" />
+    <EmbedBlock
+      service="youtube"
+      id="5b35haQV7tU"
+      title="Example YouTube Video"
+      params="autoplay=1&mute=1"
+      thumbnail="https://suchscience.net/wp-content/uploads/2024/09/v2-injpw-wewri.jpg"
+      ratio="16:9"
+      autoscale={true}
+      widget={false}
+      size="feature"
+    />
 
     <EmbedBlock
       service="vimeo"
       id="776749483"
-      title='Apple "Escape From The Office"'
+      title="Apple 'Escape From The Office'"
+      params="autoplay=1&mute=1&loop=1"
+      thumbnail="https://static.advert.ge/media/apple-escape_from_the_office/poster.1080p.jpg"
+      ratio="16:9"
+      autoscale={true}
+      widget={false}
+      size="page"
+    />
+
+    <EmbedBlock service="youtube" id="A2gmT3SR1vI" size="full" />
+
+    <EmbedBlock
+      service="vimeo"
+      id="776749483"
+      title="Apple 'Escape From The Office'"
+      size="inline"
     />
   </div>
 </Layout>
