@@ -7,7 +7,8 @@
 --font-family-default: 'Instrument Sans Variable', Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 --font-family-special:  'Instrument Serif', serif;
 --font-mono: 'Geist Mono Variable', monospace;
- --white: #fdfdfa;
+--bg: #4d4d4d; 
+--white: #fdfdfa;
     --black: #4d4d4d;
     --primary: #00b7c6;
     --grey--dark: #aca79a;
