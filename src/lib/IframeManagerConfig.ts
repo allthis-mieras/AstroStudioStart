@@ -14,7 +14,7 @@ export const iframeManagerConfig = {
 
   services: {
     youtube: {
-      embedUrl: 'https://www.youtube-nocookie.com/embed/{data-id}?modestbranding=1&autohide=1',
+      embedUrl: 'https://www.youtube-nocookie.com/embed/{data-id}',
       thumbnailUrl: 'https://i3.ytimg.com/vi/{data-id}/hqdefault.jpg',
 
       iframe: {

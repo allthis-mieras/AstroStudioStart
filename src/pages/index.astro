@@ -8,6 +8,7 @@ import VideoBlock from "../components/content/VideoBlock.astro";
 import MultiColBlock from "../components/content/MultiColBlock.astro";
 import TestimonialBlock from "../components/content/TestimonialBlock.astro";
 import EmbedBlock from "../components/content/EmbedBlock-ifm.astro";
+import MediaGallery from "../components/content/MediaGallery.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -233,7 +234,7 @@ import EmbedBlock from "../components/content/EmbedBlock-ifm.astro";
       service="youtube"
       id="oYxohKbeMZw"
       title="Headspace / Bent' Benjamin Earl Turner"
-      params="autoplay='1&mute=1"
+      params="autoplay=1&mute=1"
       thumbnail="https://directorslibrary.com/wp-content/uploads/2024/02/HeadspaceBent-Benjamin-Earl-Turner-1.png"
       ratio="16:9"
       autoscale={true}
@@ -261,6 +262,106 @@ import EmbedBlock from "../components/content/EmbedBlock-ifm.astro";
       autoscale={true}
       widget={false}
       size="page"
+    />
+
+    <MediaGallery
+      type="grid"
+      items={[
+        {
+          type: "image",
+          src: "https://lab.pangrampangram.com/experiments/image-gallery/images/6.png",
+          alt: "Image 1",
+          title: "Image 1",
+        },
+        {
+          type: "video",
+          sources: [
+            "https://test-videos.co.uk/vids/jellyfish/mp4/h264/720/Jellyfish_720_10s_2MB.mp4",
+          ],
+          title: "Video 1",
+          description: "Description of Video 1",
+          subtitle: "Subtitle of Video 1",
+          thumb: "path/to/thumb1.jpg",
+          size: "inline",
+          showCaption: true,
+        },
+        {
+          type: "embed",
+          service: "youtube",
+          id: "oYxohKbeMZw",
+          title: "YouTube Video",
+          params: "autoplay=1&mute=1",
+          thumbnail:
+            "https://directorslibrary.com/wp-content/uploads/2024/02/HeadspaceBent-Benjamin-Earl-Turner-1.png",
+          ratio: "16:9",
+          autoscale: true,
+          widget: false,
+          size: "inline",
+        },
+        {
+          type: "embed",
+          service: "vimeo",
+          id: "857258584",
+          title: "Vimeo Video",
+          params: "autoplay=1&loop=1",
+          thumbnail:
+            "https://directorslibrary.com/wp-content/uploads/2024/02/HeadspaceBent-Benjamin-Earl-Turner-1.png",
+          ratio: "16:9",
+          autoscale: true,
+          widget: false,
+          size: "inline",
+        },
+      ]}
+    />
+
+    <MediaGallery
+      type="carousel"
+      items={[
+        {
+          type: "image",
+          src: "https://lab.pangrampangram.com/experiments/image-gallery/images/6.png",
+          alt: "Image 1",
+          title: "Image 1",
+        },
+        {
+          type: "video",
+          sources: [
+            "https://test-videos.co.uk/vids/jellyfish/mp4/h264/720/Jellyfish_720_10s_2MB.mp4",
+          ],
+          title: "Video 1",
+          description: "Description of Video 1",
+          subtitle: "Subtitle of Video 1",
+          thumb: "path/to/thumb1.jpg",
+          size: "inline",
+          showCaption: true,
+        },
+        {
+          type: "embed",
+          service: "youtube",
+          id: "oYxohKbeMZw",
+          title: "YouTube Video",
+          params: "autoplay=0&mute=1",
+          thumbnail:
+            "https://directorslibrary.com/wp-content/uploads/2024/02/HeadspaceBent-Benjamin-Earl-Turner-1.png",
+          ratio: "16:9",
+          autoscale: true,
+          widget: false,
+          size: "inline",
+        },
+        {
+          type: "embed",
+          service: "vimeo",
+          id: "1020568412",
+          title: "Vimeo Video",
+          params: "autoplay=1&loop=1",
+          thumbnail:
+            "https://directorslibrary.com/wp-content/uploads/2024/02/HeadspaceBent-Benjamin-Earl-Turner-1.png",
+          ratio: "16:9",
+          autoscale: true,
+          widget: false,
+          size: "inline",
+        },
+      ]}
     />
   </div>
 </Layout>

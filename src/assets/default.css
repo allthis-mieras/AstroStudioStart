@@ -313,6 +313,13 @@ figure figcaption {
   margin-top: 1rem; /* Of een andere gewenste waarde */
 }
 
+.swiper-slide > *,
+.media-item > * {
+  display: inline-block;
+  margin: 0!important;
+  width: 100%;
+}
+
 /* Als de ruimte te klein is, forceer alles onder elkaar */
 @media (max-width: 768px) {
   .columns {

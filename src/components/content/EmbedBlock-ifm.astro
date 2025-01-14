@@ -19,7 +19,7 @@ interface Props {
     | "9:20";
   autoscale?: boolean;
   widget?: boolean;
-  size?: "inline" | "feature" | "page" | "full";
+  size?: "inline" | "feature" | "page" | "full" | "none";
 }
 
 const {
@@ -42,13 +42,15 @@ function getSizeClass(size: string) {
       return "page";
     case "full":
       return "full";
+    case "none":
+      return "";
     default:
       return "inline";
   }
 }
 ---
 
-<div class="full-width">
+<section class="full-width">
   <div
     class={`embed ${getSizeClass(size)}`}
     data-service={service}
@@ -61,7 +63,7 @@ function getSizeClass(size: string) {
     data-widget={widget ? "" : undefined}
   >
   </div>
-</div>
+</section>
 <style>
   div[data-service],
   div[data-service] .cll,
