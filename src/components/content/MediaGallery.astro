@@ -1,0 +1,17 @@
+---
+// filepath: /Users/maartenmieras/Dropbox/Work/Github/AstroStudioStarter/web/src/components/content/MediaGallery.astro
+import MediaGrid from "./MediaGrid.astro";
+import MediaCarousel from "./MediaCarousel.astro";
+import type { MediaItem } from "../../lib/MediaItemTypes";
+
+// Props for the component
+interface Props {
+  type: "grid" | "carousel";
+  items: MediaItem[];
+}
+
+const { type, items } = Astro.props;
+---
+
+{type === "grid" && <MediaGrid items={items} />}
+{type === "carousel" && <MediaCarousel items={items} />}

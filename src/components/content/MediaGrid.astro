@@ -1,0 +1,65 @@
+---
+import ImageBlock from "./ImageBlock.astro";
+import VideoBlock from "./VideoBlock.astro";
+import EmbedBlock from "./EmbedBlock-ifm.astro";
+import type { MediaItem } from "../../lib/MediaItemTypes";
+
+// Props for the component
+interface Props {
+  items: MediaItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="media-grid page">
+  {
+    items.map((item) => (
+      <div class="media-item">
+        {item.type === "image" && (
+          <ImageBlock
+            image={item.src}
+            alt={item.alt || "Image"}
+            title={item.title}
+          />
+        )}
+        {item.type === "video" && (
+          <VideoBlock
+            sources={item.sources}
+            title={item.title}
+            description={item.description}
+            subtitle={item.subtitle}
+            thumb={item.thumb}
+            size={item.size}
+            showCaption={item.showCaption}
+          />
+        )}
+        {item.type === "embed" && (
+          <EmbedBlock
+            service={item.service}
+            id={item.id}
+            title={item.title}
+            params={item.params}
+            thumbnail={item.thumbnail}
+            ratio={item.ratio}
+            autoscale={item.autoscale}
+            widget={item.widget}
+            size="none"
+          />
+        )}
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    align-items: start;
+    gap: var(--gap-default);
+  }
+  .media-item {
+    width: 100%;
+  }
+</style>
