@@ -42,7 +42,7 @@ import MediaGallery from "../components/content/MediaGallery.astro";
       media={{
         type: "image",
         props: {
-          image: "https://visobs.co/upload/reading-room-new-reader-4ba364.jpg",
+          src: "https://visobs.co/upload/reading-room-new-reader-4ba364.jpg",
           alt: "Descriptive alt text for the image",
         },
       }}
@@ -54,7 +54,7 @@ import MediaGallery from "../components/content/MediaGallery.astro";
     />
     <pre>ImageBlock.astro</pre>
     <ImageBlock
-      image="https://visobs.co/upload/reading-room-new-reader-4ba364.jpg"
+      src="https://visobs.co/upload/reading-room-new-reader-4ba364.jpg"
       caption="Full screen image"
       alt="Nice alt text for SEO and screenreaders"
       size="full"
@@ -76,7 +76,7 @@ import MediaGallery from "../components/content/MediaGallery.astro";
     </TextBlock>
     <pre>ImageBlock.astro</pre>
     <ImageBlock
-      image="https://lab.pangrampangram.com/experiments/image-gallery/images/6.png"
+      src="https://lab.pangrampangram.com/experiments/image-gallery/images/6.png"
       caption="Description of the image"
       alt="A very nice alt text"
       size="page"
@@ -177,24 +177,21 @@ import MediaGallery from "../components/content/MediaGallery.astro";
       columns={[
         {
           _type: "imageBlock",
-          image:
-            "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
+          src: "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
           alt: "Een voorbeeldafbeelding",
           size: "full",
           caption: "Een mooie afbeelding",
         },
         {
           _type: "imageBlock",
-          image:
-            "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
+          src: "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
           alt: "Een voorbeeldafbeelding",
           size: "full",
           caption: "Een mooie afbeelding",
         },
         {
           _type: "imageBlock",
-          image:
-            "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
+          src: "https://payload.cargocollective.com/1/0/31246/14507165/238_1000.jpg",
           alt: "Een voorbeeldafbeelding",
           size: "full",
           caption: "Een mooie afbeelding",
@@ -281,7 +278,8 @@ import MediaGallery from "../components/content/MediaGallery.astro";
           title: "Video 1",
           description: "Description of Video 1",
           subtitle: "Subtitle of Video 1",
-          thumb: "path/to/thumb1.jpg",
+          thumb:
+            "https://u4d2z7k9.rocketcdn.me/wp-content/uploads/2024/10/Untitled-design-15-1.jpg.webp",
           size: "inline",
           showCaption: true,
         },
@@ -296,7 +294,6 @@ import MediaGallery from "../components/content/MediaGallery.astro";
           ratio: "16:9",
           autoscale: true,
           widget: false,
-          size: "inline",
         },
         {
           type: "embed",
@@ -309,7 +306,6 @@ import MediaGallery from "../components/content/MediaGallery.astro";
           ratio: "16:9",
           autoscale: true,
           widget: false,
-          size: "inline",
         },
       ]}
     />
@@ -340,18 +336,17 @@ import MediaGallery from "../components/content/MediaGallery.astro";
           service: "youtube",
           id: "oYxohKbeMZw",
           title: "YouTube Video",
-          params: "autoplay=0&mute=1",
+          // params: "autoplay=1&mute=1",
           thumbnail:
             "https://directorslibrary.com/wp-content/uploads/2024/02/HeadspaceBent-Benjamin-Earl-Turner-1.png",
           ratio: "16:9",
           autoscale: true,
           widget: false,
-          size: "inline",
         },
         {
           type: "embed",
           service: "vimeo",
-          id: "1020568412",
+          id: "857258584",
           title: "Vimeo Video",
           params: "autoplay=1&loop=1",
           thumbnail:
@@ -359,7 +354,6 @@ import MediaGallery from "../components/content/MediaGallery.astro";
           ratio: "16:9",
           autoscale: true,
           widget: false,
-          size: "inline",
         },
       ]}
     />

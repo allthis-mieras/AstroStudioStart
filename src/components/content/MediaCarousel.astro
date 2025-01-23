@@ -19,11 +19,7 @@ const { items } = Astro.props;
         items.map((item) => (
           <div class="swiper-slide">
             {item.type === "image" && (
-              <ImageBlock
-                image={item.src}
-                alt={item.alt || "Image"}
-                title={item.title}
-              />
+              <ImageBlock src={item.src} alt={item.alt || ""} size="none" />
             )}
             {item.type === "video" && (
               <VideoBlock
@@ -31,9 +27,9 @@ const { items } = Astro.props;
                 title={item.title}
                 description={item.description}
                 subtitle={item.subtitle}
-                thumb={item.thumb}
-                size={item.size}
+                thumb={item.thumb || ""}
                 showCaption={item.showCaption}
+                size="none"
               />
             )}
             {item.type === "embed" && (
@@ -41,7 +37,11 @@ const { items } = Astro.props;
                 service={item.service}
                 id={item.id}
                 title={item.title}
-                params={item.params}
+                params={
+                  item.params
+                    ? item.params + "?enablejsapi=1"
+                    : "?enablejsapi=1"
+                }
                 thumbnail={item.thumbnail}
                 ratio={item.ratio}
                 autoscale={item.autoscale}
@@ -63,7 +63,7 @@ const { items } = Astro.props;
 <style>
   .swiper-body {
     position: relative;
-    height: 600px;
+    height: auto;
   }
   .swiper {
     width: 100%;

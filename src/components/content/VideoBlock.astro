@@ -4,8 +4,8 @@ export interface Props {
   description?: string; // Beschrijving van de video
   sources: string[]; // Lijst met video-URL's (meerdere formaten mogelijk)
   subtitle?: string; // Ondertitel van de video
-  thumb: string; // Thumbnail (optioneel)
-  size: "full" | "page" | "large" | "inline"; // Grootte opties
+  thumb?: string; // Thumbnail (optioneel)
+  size: "full" | "page" | "large" | "inline" | "none"; // Grootte opties
   showCaption?: boolean; // Optie om figcaption te tonen of te verbergen
 }
 
@@ -95,5 +95,9 @@ const {
     color: hsl(from var(--font-color) h s l / 70%);
     line-height: 133%;
     margin-top: 0.25em;
+  }
+
+  .none {
+    width: 100%;
   }
 </style>
