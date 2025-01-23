@@ -2,13 +2,13 @@
 import { Image } from "astro:assets";
 
 export interface Props {
-  image: string; // URL naar de afbeelding
+  src: string; // URL naar de afbeelding
   alt: string; // Beschrijvende alternatieve tekst (verplicht voor toegankelijkheid)
   caption?: string;
   size: "full" | "page" | "popout" | "inline" | "none";
 }
 
-const { image, alt, caption, size } = Astro.props;
+const { src, alt, caption, size } = Astro.props;
 
 // Definieer sizes en widths voor responsieve ondersteuning
 const widths = [240, 540, 720, 1920];
@@ -18,13 +18,13 @@ const sizes = {
   inline: `(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 600px`,
   page: `(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1920px`,
   popout: `(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1920px`,
-  none: `0px`,
+  none: `(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 1200px`,
 };
 ---
 
 <figure class={`image-block ${size}`}>
   <Image
-    src={image}
+    src={src}
     alt={alt || "Image"}
     widths={widths}
     sizes={sizes[size] || sizes.page}
