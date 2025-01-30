@@ -56,7 +56,7 @@ function getSizeClass(size: string) {
     data-service={service}
     data-id={id}
     data-title={title}
-    data-params={params}
+    data-params={params ? `${params}&enablejsapi=1` : "enablejsapi=1"}
     data-thumbnail={thumbnail}
     data-ratio={ratio}
     data-autoscale={autoscale ? "" : undefined}
