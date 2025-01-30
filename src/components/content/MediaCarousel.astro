@@ -37,11 +37,7 @@ const { items } = Astro.props;
                 service={item.service}
                 id={item.id}
                 title={item.title}
-                params={
-                  item.params
-                    ? item.params + "?enablejsapi=1"
-                    : "?enablejsapi=1"
-                }
+                params={item.params}
                 thumbnail={item.thumbnail}
                 ratio={item.ratio}
                 autoscale={item.autoscale}
