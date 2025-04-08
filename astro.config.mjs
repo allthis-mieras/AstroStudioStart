@@ -11,7 +11,10 @@ export default defineConfig({
       fs: {
         allow: [
           '/Users/maartenmieras/node_modules',
-          '/Users/maartenmieras/Dropbox/Work/Github/AstroStudioStarter/web',
+          '/Users/maartenmieras/Dropbox/Work/Github/Astro Test/AstroStudioStarter/web',
+          '/Users/maartenmieras/Dropbox/Work/Github/Astro Test/AstroStudioStarter/web/src',
+          '/Users/maartenmieras/Dropbox/Work/Github/Astro Test/AstroStudioStarter/web/node_modules/@fontsource-variable',
+          '/Users/maartenmieras/Dropbox/Work/Github/Astro Test/AstroStudioStarter/web/node_modules/@fontsource',
         ],
       },
     },
